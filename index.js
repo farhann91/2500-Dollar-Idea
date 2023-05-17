@@ -17,8 +17,10 @@ app.use(userRoute);
 app.use(taskRoute);
 
 // Start the datase when the app starts
-connect();
+//  connect();
 
-app.listen(PORT, () => {
-  console.log("Server up and running on port: ", PORT);
+connect().then(() => {
+  app.listen(PORT, () => {
+    console.log("Server up and running on port: ", PORT);
+  });
 });
